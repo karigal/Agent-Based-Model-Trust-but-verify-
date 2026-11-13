@@ -41,12 +41,6 @@ After clicking “Apply” or “Reset,” or changing the scenario, the applica
 The “↻ Recalculate Ensemble” button triggers recalculation manually (for example, with a larger R).
 The ensemble is computed using the fast NumPy version of the model (`model.py`), whose logic matches that of the Mesa version.
 
-## Variation Across Runs (“Bootstrap”) in Experiments
-
-`experiments.py` saves the metrics for every run of all experiments (`out/data/all_runs.csv`) and a summary (`out/data/bootstrap_summary.csv`): the mean, standard deviation (SD) across runs, the interval covering 95% of runs, and the 95% bootstrap confidence interval for the mean (1,000 resamples). Experiment B (`B_convergence.csv`, `B_variance.csv`, figure `B_bootstrap.png`) examines the convergence of the mean as the number of runs increases and decomposes variability into “between-population” variation (network, characteristics, initial states) and “within-population” variation (randomness in evaluations and communication).
-
-The gray shaded region appears on the plots only in the scenario with checks.
-
 ## Architecture
 
 - `model.py` — the main vectorized model for Variant 3 and its parameters (BASE, SCENARIOS), plus mean-field calculations.
